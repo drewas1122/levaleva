@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="nb">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lag ny tur (ansatte) – LevaLeva helsesenter</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700;800&family=Fraunces:ital,opsz,wght@0,9..144,600;0,9..144,700;1,9..144,600&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" href="img/favicon.png">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <a class="hopp-til-innhold" href="#hovedinnhold">Hopp til innhold</a>
+
+  <header class="topp">
+    <div class="innhold">
+      <nav class="hovedmeny" aria-label="Hovedmeny">
+        <a href="index.html">Forside</a>
+        <a href="pamelding.html">Turer og påmelding</a>
+        <a href="ny-tur.html" aria-current="page">For ansatte</a>
+      </nav>
+      <div class="innlogging">
+        <!-- Placeholder: navnet hentes fra innlogget ansatt -->
+        <span class="status">Innlogget som ansatt: <strong>Kari Nordmo</strong></span>
+        <a href="#logg-ut" class="knapp knapp-idporten" data-idporten>Logg ut</a>
+      </div>
+      <a href="index.html" class="logo"><img src="img/logo-liggende.png" alt="LevaLeva lege og tannlege – til forsiden" width="212" height="48"></a>
+    </div>
+  </header>
+
+  <main id="hovedinnhold">
+    <div class="sidetopp">
+      <div class="innhold">
+        <nav class="brodsmuler" aria-label="Brødsmuler"><a href="index.html">Forside</a> › For ansatte › Ny tur</nav>
+        <h1>Lag ny tur</h1>
+        <p>Fyll ut skjemaet for å legge ut en ny trimtur. Turen vises i ukeplanen for pasientene så snart den er publisert. Felt merket med <span class="obligatorisk">*</span> må fylles ut.</p>
+      </div>
+    </div>
+
+    <section class="seksjon">
+      <div class="innhold skjema-oppsett">
+
+        <!-- TODO back-end: action og method er klare – POST /api/turer -->
+        <form class="skjema" id="ny-tur-skjema" action="/api/turer" method="post" novalidate>
+          <fieldset>
+            <legend>Om turen</legend>
+            <div class="felt" style="margin-bottom:1rem">
+              <label for="navn">Navn på tur <span class="obligatorisk">*</span></label>
+              <input id="navn" name="navn" type="text" required maxlength="60" placeholder="F.eks. Morgentur rundt Levangerelva">
+            </div>
+            <div class="felt-rad">
+              <div class="felt">
+                <label for="turleder">Turleder <span class="obligatorisk">*</span></label>
+                <select id="turleder" name="turleder_id" required>
+                  <option value="">Velg turleder …</option>
+                  <!-- Placeholder: liste over ansatte hentes fra back-end -->
+                  <option value="1">Kari Nordmo (fysioterapeut)</option>
+                  <option value="2">Ola Skjelstad (lege)</option>
+                  <option value="3">Ingrid Haugan (sykepleier)</option>
+                  <option value="4">Mats Ekle (tannpleier)</option>
+                  <option value="5">Siri Lyngstad (ergoterapeut)</option>
+                </select>
+              </div>
+              <div class="felt">
+                <label for="plasser">Antall plasser <span class="obligatorisk">*</span></label>
+                <input id="plasser" name="plasser_totalt" type="number" min="1" max="50" value="15" required>
+              </div>
+            </div>
+          </fieldset>
+
+          <fieldset>
+            <legend>Tid</legend>
+            <div class="felt-rad">
+              <div class="felt">
+                <label for="dato">Dato <span class="obligatorisk">*</span></label>
+                <input id="dato" name="dato" type="date" required>
+              </div>
+              <div class="felt">
+                <label for="tid">Starttid <span class="obligatorisk">*</span></label>
+                <input id="tid" name="starttid" type="time" required value="10:00" step="900">
+              </div>
+              <div class="felt">
+                <label for="varighet">Varighet <span class="obligatorisk">*</span></label>
+                <select id="varighet" name="varighet_min" required>
+                  <option value="30">30 min</option>
+                  <option value="45">45 min</option>
+                  <option value="60" selected>1 time</option>
+                  <option value="75">1 t 15 min</option>
+                  <option value="90">1 t 30 min</option>
+                  <option value="120">2 timer</option>
+                  <option value="150">2 t 30 min</option>
+                  <option value="180">3 timer</option>
+                </select>
+              </div>
+            </div>
+          </fieldset>
+
+          <fieldset>
+            <legend>Sted og rute</legend>
+            <div class="felt-rad">
+              <div class="felt">
+                <label for="startsted">Hvor turen starter <span class="obligatorisk">*</span></label>
+                <input id="startsted" name="startsted" type="text" required placeholder="F.eks. LevaLeva, hovedinngangen">
+              </div>
+              <div class="felt">
+                <label for="rute">Hvor turen går <span class="obligatorisk">*</span></label>
+                <input id="rute" name="rute" type="text" required placeholder="F.eks. Langs elva til Moan og tilbake">
+              </div>
+            </div>
+          </fieldset>
+
+          <fieldset>
+            <legend>Tilrettelegging og ekstra info</legend>
+            <div class="avkrysning" style="margin-bottom:1rem">
+              <label><input type="checkbox" name="ekstra[]" value="Tilrettelagt for rullestol"> ♿ Tilrettelagt for rullestol</label>
+              <label><input type="checkbox" name="ekstra[]" value="Flatt terreng"> 🛤️ Flatt terreng</label>
+              <label><input type="checkbox" name="ekstra[]" value="Fruktpause ved gapahuken"> 🍎 Fruktpause ved gapahuken</label>
+              <label><input type="checkbox" name="ekstra[]" value="Kaffepause"> ☕ Kaffepause</label>
+              <label><input type="checkbox" name="ekstra[]" value="Barnevennlig"> 🧒 Barnevennlig</label>
+              <label><input type="checkbox" name="ekstra[]" value="Innendørs"> 🏠 Innendørs</label>
+            </div>
+            <div class="felt">
+              <label for="info">Annen informasjon</label>
+              <textarea id="info" name="ekstra_tekst" maxlength="400" placeholder="F.eks. ta med gode sko og varme klær. Hodelykt anbefales."></textarea>
+              <span class="hjelp">Vises for pasientene i turinformasjonen. Maks 400 tegn.</span>
+            </div>
+          </fieldset>
+
+          <div class="skjema-knapper">
+            <button type="reset" class="knapp knapp-sekundar">Tøm skjema</button>
+            <button type="submit" class="knapp knapp-primar">Publiser tur</button>
+          </div>
+        </form>
+
+        <aside class="forhandsvisning" aria-label="Forhåndsvisning">
+          <p class="etikett">Forhåndsvisning – slik ser pasientene turen</p>
+          <div class="turkort" id="forhandsvisning">
+            <span class="dato" data-vis="dato">Velg dato og tid</span>
+            <h3 data-vis="navn">Navn på tur</h3>
+            <span class="meta" data-vis="sted">📍 Startsted</span>
+            <span class="meta" data-vis="rute">🥾 Rute</span>
+            <span class="meta" data-vis="info">⏱️ 1 time · 15 av 15 ledige</span>
+            <span class="meta" data-vis="leder">🧭 Turleder</span>
+            <ul class="ekstra" data-vis="ekstra"></ul>
+          </div>
+          <div class="varsel tips" role="note">
+            <span class="ikon" aria-hidden="true">💡</span>
+            <p>Må du endre eller avlyse en tur som allerede er publisert, blir påmeldte pasienter varslet automatisk.</p>
+          </div>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <footer class="bunn">
+    <div class="innhold">
+      <div>
+        <img class="bunn-logo" src="img/logo.png" alt="LevaLeva lege og tannlege" width="120" height="102">
+        <h3>LevaLeva helsesenter</h3>
+        <p>Lege og tannlege på Levanger</p>
+        <p>Kirkegata 1, 7600 Levanger</p>
+      </div>
+      <div>
+        <h3>Kontakt</h3>
+        <p>Telefon: 74 00 00 00</p>
+        <p>E-post: <a href="mailto:post@levaleva.no">post@levaleva.no</a></p>
+      </div>
+      <div>
+        <h3>Internt</h3>
+        <p>Denne siden er kun for ansatte.</p>
+        <p>Spørsmål: IT-ansvarlig</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/felles.js"></script>
+  <script src="js/ny-tur.js"></script>
+</body>
+</html>

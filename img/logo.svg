@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 56" role="img" aria-label="LevaLeva helsesenter">
+  <!-- Plassholder-logo. Bytt ut med den offisielle LevaLeva-logoen (samme filnavn). -->
+  <g transform="translate(4 4)">
+    <path d="M24 46 C6 34 0 22 6 12 C11 4 20 4 24 12 C28 4 37 4 42 12 C48 22 42 34 24 46Z" fill="#2f6b55"/>
+    <path d="M10 30 L18 30 L21 22 L26 36 L29 28 L38 28" fill="none" stroke="#f6f3ec" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+  <text x="58" y="30" font-family="Fraunces, Georgia, serif" font-size="25" font-weight="700" fill="#1d3f33">Leva<tspan fill="#d9683b">Leva</tspan></text>
+  <text x="59" y="47" font-family="Figtree, Arial, sans-serif" font-size="10.5" letter-spacing="1.6" fill="#55705f">HELSESENTER · LEVANGER</text>
+</svg>

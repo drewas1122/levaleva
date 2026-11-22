@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="nb">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Turer og påmelding – LevaLeva helsesenter</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700;800&family=Fraunces:ital,opsz,wght@0,9..144,600;0,9..144,700;1,9..144,600&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" href="img/favicon.png">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <a class="hopp-til-innhold" href="#hovedinnhold">Hopp til innhold</a>
+
+  <header class="topp">
+    <div class="innhold">
+      <nav class="hovedmeny" aria-label="Hovedmeny">
+        <a href="index.html">Forside</a>
+        <a href="pamelding.html" aria-current="page">Turer og påmelding</a>
+        <a href="ny-tur.html">For ansatte</a>
+      </nav>
+      <div class="innlogging">
+        <span class="status">Ikke innlogget</span>
+        <a href="#idporten" class="knapp knapp-idporten" data-idporten>Logg inn med ID-porten</a>
+      </div>
+      <a href="index.html" class="logo"><img src="img/logo-liggende.png" alt="LevaLeva lege og tannlege – til forsiden" width="212" height="48"></a>
+    </div>
+  </header>
+
+  <main id="hovedinnhold">
+    <div class="sidetopp">
+      <div class="innhold">
+        <nav class="brodsmuler" aria-label="Brødsmuler"><a href="index.html">Forside</a> › Turer og påmelding</nav>
+        <h1>Turer og påmelding</h1>
+        <p>Her ser du alle trimturer denne uka og neste uke. Klikk på en tur for å se mer informasjon og melde deg på.</p>
+      </div>
+    </div>
+
+    <section class="seksjon" id="kalender" aria-labelledby="kalender-tittel">
+      <div class="innhold">
+        <h2 id="kalender-tittel" class="skjult">Ukeplan</h2>
+
+        <div class="varsel" role="note">
+          <span class="ikon" aria-hidden="true">⚠️</span>
+          <p><strong>Det kan skje endringer i turplanen.</strong> Turer kan bli flyttet, endret eller avlyst på kort varsel, f.eks. på grunn av vær. Endrede turer er merket med <strong>ENDRET</strong>. Er du påmeldt, får du beskjed.</p>
+        </div>
+
+        <div class="kalender-verktoy">
+          <div class="ukevelger">
+            <button class="knapp knapp-ikon" type="button" data-forrige aria-label="Forrige uke">‹</button>
+            <div class="ukeinfo" aria-live="polite">
+              <strong data-uke-tittel>Denne uka</strong>
+              <span data-uke-periode></span>
+            </div>
+            <button class="knapp knapp-ikon" type="button" data-neste aria-label="Neste uke">›</button>
+          </div>
+          <div class="ukefaner" role="group" aria-label="Velg uke">
+            <button type="button" data-fane="0" aria-pressed="true">Denne uka</button>
+            <button type="button" data-fane="1" aria-pressed="false">Neste uke</button>
+          </div>
+        </div>
+
+        <div class="forklaring" aria-label="Forklaring">
+          <span><i class="prikk prikk-ledig"></i> Ledige plasser</span>
+          <span><i class="prikk prikk-fa"></i> Få plasser igjen</span>
+          <span><i class="prikk prikk-full"></i> Fullt</span>
+        </div>
+
+        <div class="uke">
+          <!-- Fylles av js/kalender.js -->
+        </div>
+      </div>
+    </section>
+
+    <section class="seksjon" style="padding-top:0">
+      <div class="innhold">
+        <div class="infoboks">
+          <span class="ikon" aria-hidden="true">🔒</span>
+          <div>
+            <h3>Påmelding med ID-porten</h3>
+            <p>For å melde deg på må du logge inn med ID-porten. Du ser bare hvor mange som er påmeldt hver tur – ikke hvem.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="bunn">
+    <div class="innhold">
+      <div>
+        <img class="bunn-logo" src="img/logo.png" alt="LevaLeva lege og tannlege" width="120" height="102">
+        <h3>LevaLeva helsesenter</h3>
+        <p>Lege og tannlege på Levanger</p>
+        <p>Kirkegata 1, 7600 Levanger</p>
+      </div>
+      <div>
+        <h3>Kontakt</h3>
+        <p>Telefon: 74 00 00 00</p>
+        <p>E-post: <a href="mailto:post@levaleva.no">post@levaleva.no</a></p>
+      </div>
+      <div>
+        <h3>Åpningstider</h3>
+        <p>Mandag–fredag 08–16</p>
+        <p>Ved akutt sykdom: ring 113</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/felles.js"></script>
+  <script src="js/data.js"></script>
+  <script src="js/kalender.js"></script>
+</body>
+</html>

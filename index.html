@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="nb">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Trimturer – LevaLeva helsesenter Levanger</title>
+  <meta name="description" content="Bli med på trimturer med LevaLeva helsesenter på Levanger. Se ukeplanen og meld deg på.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700;800&family=Fraunces:ital,opsz,wght@0,9..144,600;0,9..144,700;1,9..144,600&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" href="img/favicon.png">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <a class="hopp-til-innhold" href="#hovedinnhold">Hopp til innhold</a>
+
+  <header class="topp">
+    <div class="innhold">
+      <nav class="hovedmeny" aria-label="Hovedmeny">
+        <a href="index.html" aria-current="page">Forside</a>
+        <a href="pamelding.html">Turer og påmelding</a>
+        <a href="ny-tur.html">For ansatte</a>
+      </nav>
+      <div class="innlogging">
+        <span class="status">Ikke innlogget</span>
+        <a href="#idporten" class="knapp knapp-idporten" data-idporten>Logg inn med ID-porten</a>
+      </div>
+      <a href="index.html" class="logo"><img src="img/logo-liggende.png" alt="LevaLeva lege og tannlege – til forsiden" width="212" height="48"></a>
+    </div>
+  </header>
+
+  <main id="hovedinnhold">
+    <section class="hero">
+      <div class="innhold">
+        <div>
+          <p class="overtittel" style="color: var(--gul)">Trimturer for pasienter</p>
+          <h1>Bli med ut – <em>sammen</em> går det lettere</h1>
+          <p class="ingress">LevaLeva arrangerer trygge og hyggelige turer i nærområdet på Levanger, ledet av helsepersonell. Alle pasienter ved helsesenteret er velkomne.</p>
+          <div class="knapperad">
+            <a href="pamelding.html" class="knapp knapp-primar">Se ukeplanen</a>
+            <a href="#slik" class="knapp knapp-sekundar">Slik fungerer det</a>
+          </div>
+        </div>
+        <div class="hero-illustrasjon" aria-hidden="true">
+          <svg viewBox="0 0 480 340" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="360" cy="90" r="46" fill="#f2c14e"/>
+            <path d="M0 230 L90 140 L150 190 L240 90 L330 180 L390 130 L480 200 L480 340 L0 340Z" fill="#174e7e"/>
+            <path d="M240 90 L268 118 L252 116 L240 128 L226 114 L214 118Z" fill="#f6f3ec"/>
+            <path d="M0 270 C80 240 160 262 240 250 C330 236 400 256 480 240 L480 340 L0 340Z" fill="#6f9a62"/>
+            <path d="M0 300 C120 286 240 310 480 290 L480 340 L0 340Z" fill="#8fb5c9"/>
+            <path d="M120 272 C170 262 200 280 250 268 C300 256 330 270 380 262" stroke="#f6f3ec" stroke-width="4" stroke-dasharray="2 10" stroke-linecap="round" fill="none"/>
+            <g fill="#0f2c4a">
+              <polygon points="60,262 72,226 84,262"/><polygon points="74,264 88,220 102,264"/>
+              <polygon points="410,250 422,214 434,250"/><polygon points="428,252 440,222 452,252"/>
+            </g>
+            <g transform="translate(210 222)">
+              <circle cx="0" cy="0" r="7" fill="#d9683b"/><path d="M0 7 L0 30 M0 14 L-10 24 M0 14 L10 22 M0 30 L-8 44 M0 30 L8 44" stroke="#d9683b" stroke-width="4" stroke-linecap="round"/>
+            </g>
+            <g transform="translate(240 218)">
+              <circle cx="0" cy="0" r="7" fill="#f6f3ec"/><path d="M0 7 L0 30 M0 14 L-10 22 M0 14 L12 24 M0 30 L-8 44 M0 30 L8 44 M12 24 L14 46" stroke="#f6f3ec" stroke-width="4" stroke-linecap="round"/>
+            </g>
+          </svg>
+        </div>
+      </div>
+    </section>
+
+    <section class="seksjon seksjon-hvit" id="slik">
+      <div class="innhold">
+        <p class="overtittel">Slik fungerer det</p>
+        <h2>Tre enkle steg</h2>
+        <ol class="steg">
+          <li>
+            <h3>Logg inn trygt</h3>
+            <p>Du logger inn med ID-porten (BankID, MinID e.l.), slik at personopplysningene dine er beskyttet.</p>
+          </li>
+          <li>
+            <h3>Velg en tur</h3>
+            <p>Se ukeplanen for denne og neste uke. Klikk på en tur for å se detaljer, vær og ledige plasser.</p>
+          </li>
+          <li>
+            <h3>Meld deg på og møt opp</h3>
+            <p>Turlederen tar imot deg på oppmøtestedet. Du kan melde deg av igjen hvis noe kommer i veien.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="seksjon">
+      <div class="innhold">
+        <div class="seksjon-hode">
+          <div>
+            <p class="overtittel">Snart</p>
+            <h2>Kommende turer</h2>
+          </div>
+          <a href="pamelding.html" class="knapp knapp-sekundar">Se hele ukeplanen →</a>
+        </div>
+        <div class="varsel" role="note">
+          <span class="ikon" aria-hidden="true">⚠️</span>
+          <p><strong>Det kan skje endringer.</strong> Turer kan bli flyttet eller avlyst, for eksempel på grunn av vær eller sykdom. Sjekk turen før du drar.</p>
+        </div>
+        <div class="kortrad" id="kommende-turer">
+          <!-- Fylles av js/kalender.js -->
+        </div>
+      </div>
+    </section>
+
+    <section class="seksjon" style="padding-top:0">
+      <div class="innhold">
+        <div class="infoboks">
+          <span class="ikon" aria-hidden="true">🔒</span>
+          <div>
+            <h3>Personvernet ditt er viktig for oss</h3>
+            <p>Andre pasienter kan aldri se hvem som er påmeldt en tur – bare hvor mange. Opplysningene brukes kun av turleder og helsesenteret for å planlegge turen.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="bunn">
+    <div class="innhold">
+      <div>
+        <img class="bunn-logo" src="img/logo.png" alt="LevaLeva lege og tannlege" width="120" height="102">
+        <h3>LevaLeva helsesenter</h3>
+        <p>Lege og tannlege på Levanger</p>
+        <p>Kirkegata 1, 7600 Levanger</p>
+      </div>
+      <div>
+        <h3>Kontakt</h3>
+        <p>Telefon: 74 00 00 00</p>
+        <p>E-post: <a href="mailto:post@levaleva.no">post@levaleva.no</a></p>
+      </div>
+      <div>
+        <h3>Åpningstider</h3>
+        <p>Mandag–fredag 08–16</p>
+        <p>Ved akutt sykdom: ring 113</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/felles.js"></script>
+  <script src="js/data.js"></script>
+  <script src="js/kalender.js"></script>
+</body>
+</html>
